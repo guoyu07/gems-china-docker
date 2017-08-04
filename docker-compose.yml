@@ -34,8 +34,13 @@ web:
 bundler_api:
   container_name: 'gems_china_bundler_api'
   image: rubychina/bundler-api:0.0.1
+  links:
+    - redis
+    - memcached
   ports:
     - '5000'
+  volumes:
+    - ./log/bundler-api:/var/www/bundler-api/log
   env_file:
     - app.default.env
 
