@@ -43,4 +43,5 @@ bundler_api:
     - ./log/bundler-api:/var/www/bundler-api/log
   env_file:
     - app.default.env
+    - app.local.env
 
